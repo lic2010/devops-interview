@@ -19,6 +19,6 @@ spec:
         - name: worker
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          command: ["celery"]
+          args: ["celery"]
           env:
             {{ include "devops-interview.env" . | nindent 12 }}
