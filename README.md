@@ -1,6 +1,10 @@
 # devops-interview
 
 ## Setup
+Pre-requisite install
+- minikube
+- kubectl
+- helm
 
 To start up the development environment, you will run `make provision`.
 

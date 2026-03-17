@@ -1,0 +1,22 @@
+image:
+  repository: ghcr.io/tagup/devops-interview
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env:
+  redisUri: redis://redis:6379/0
+  databaseUri: postgresql+psycopg://tagup:tagup@postgres:5432/postgres
+  celeryBrokerUrl: amqp://tagup:tagup@rabbitmq:5672//
+  celeryResultBackend: redis://redis:6379/1
+  incrementQueue: default
+  aggregateQueue: default
+
+api:
+  replicaCount: 1
+  port: 5000
+  service:
+    type: ClusterIP
+    port: 80
+
+worker:
+  replicaCount: 1
